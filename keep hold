@@ -1,0 +1,14 @@
+const clearStoredRestaurants = async () => {
+  try {
+    await AsyncStorage.removeItem('suburbRestaurants');
+    alert('Stored restaurant data has been cleared. Restart the app to reload default data.');
+  } catch (error) {
+    console.error('Failed to clear stored data:', error);
+  }
+};
+
+<Button
+  title="🧹 Clear Stored Data"
+  onPress={clearStoredRestaurants}
+  color="#FF5722"
+/>
